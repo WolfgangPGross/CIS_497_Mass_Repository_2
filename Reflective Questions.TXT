@@ -1,0 +1,13 @@
+1.Golem inherits from Enemy
+	
+2. Enemy implements IDamageable
+	
+3. For my enemy types that were Damageable (Golem, Sentinal, Obstacle)
+
+4. Using -> "GameManager.Instance.loadLevel"
+
+5. No because it is a Singleton that is the main Object 
+	that persists across scenes
+	
+	
+https://simmer.io/@Wgross/ooppersonal
