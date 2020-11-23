@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Course Library/Personal Files/Scenes/Prototype4 - Finished.unity
-  isLoaded: 1
-  isActive: 1
