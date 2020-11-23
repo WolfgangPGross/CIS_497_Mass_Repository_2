@@ -11,7 +11,9 @@ public class GameManagerX : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI timeText;
     public GameObject titleScreen;
-    public Button restartButton; 
+    public Button restartButton;
+
+    public int countDown = 60;
 
     public List<GameObject> targetPrefabs;
 
@@ -32,9 +34,24 @@ public class GameManagerX : MonoBehaviour
         score = 0;
         UpdateScore(0);
         titleScreen.SetActive(false);
-        
+        countDown = 60;
+        StartCoroutine(doCountDown());
     }
 
+    IEnumerator doCountDown()
+    {
+        while (isGameActive)
+        {
+            if (countDown <= 0)
+            {
+                GameOver();
+            }
+
+            yield return new WaitForSeconds(1f);
+            countDown -= 1;
+            timeText.text = "Time Left: " + countDown;
+        }
+    }
     
     // While game is active spawn a random target
     IEnumerator SpawnTarget()
